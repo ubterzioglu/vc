@@ -16,7 +16,9 @@
     "redis": "^4.6.10"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.23",
     "eslint": "^8",
-    "eslint-config-next": "14.0.0"
+    "eslint-config-next": "14.0.0",
+    "postcss": "^8.5.6"
   }
 }
