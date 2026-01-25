@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { BrutalButton } from "@/components/ui/brutal-button";
 import HeroBackground from "@/components/HeroBackground";
-import { ArrowLeft, Rocket, Search, Vote, Trophy, ArrowRight } from "lucide-react";
+import { ArrowLeft, Rocket, Search, Vote, Trophy, ArrowRight, Share2, HeartHandshake } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const STEPS = [
@@ -21,15 +21,29 @@ const STEPS = [
         textColor: "text-secondary-foreground"
     },
     {
+        icon: Share2,
+        title: "3. Share",
+        description: "Spread the word! Share your project link with friends and followers to gather maximum vibes.",
+        color: "bg-tertiary",
+        textColor: "text-secondary-foreground"
+    },
+    {
         icon: Vote,
-        title: "3. Get Votes",
+        title: "4. Get Votes",
         description: "Community members vote on your project based on UI, UX, Innovation, and more.",
         color: "bg-accent",
         textColor: "text-accent-foreground"
     },
     {
+        icon: HeartHandshake,
+        title: "5. You Vote Too!",
+        description: "Don't just watch! Support fellow developers by voting on their projects. Vibe is mutual.",
+        color: "bg-muted",
+        textColor: "text-foreground"
+    },
+    {
         icon: Trophy,
-        title: "4. Climb Ranks",
+        title: "6. Climb Ranks",
         description: "Earn points, rise up the leaderboard, and get recognized as a top vibe creator!",
         color: "bg-highlight",
         textColor: "text-black"
@@ -41,7 +55,7 @@ const HowItWorks = () => {
         <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-black">
             <HeroBackground type="image" imageSrc={heroBg} overlayOpacity={0.9} />
 
-            <div className="relative z-10 container mx-auto px-4 py-8 max-w-5xl">
+            <div className="relative z-10 container mx-auto px-4 py-8 max-w-6xl">
 
                 {/* Header & Back */}
                 <header className="mb-12 flex flex-col md:flex-row justify-between items-center gap-6">
@@ -61,13 +75,13 @@ const HowItWorks = () => {
                             How It Works
                         </h1>
                         <p className="text-muted-foreground text-lg font-bold">
-                            From code to fame in 4 simple steps.
+                            From code to fame in 6 simple steps.
                         </p>
                     </motion.div>
                 </header>
 
-                {/* Steps Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                {/* Steps Grid - Updated to 3 columns */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
                     {STEPS.map((step, index) => (
                         <motion.div
                             key={index}
