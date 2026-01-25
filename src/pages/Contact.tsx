@@ -50,7 +50,7 @@ const Contact = () => {
                 </h1>
 
                 {/* Social Grid - Resized */}
-                <div className="grid grid-cols-6 gap-2 md:gap-4 mb-8 justify-center max-w-lg mx-auto">
+                <div className="grid grid-cols-3 md:grid-cols-9 gap-2 md:gap-4 mb-8 justify-center max-w-4xl mx-auto">
                     {SOCIAL_LINKS.map((link, i) => (
                         <a
                             key={i}
