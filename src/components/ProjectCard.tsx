@@ -102,23 +102,38 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                             </div>
                         )}
 
-                        {/* Country Badge */}
-                        <div className="absolute top-2 right-2 px-2 py-1 bg-background border-2 border-foreground text-xs font-bold uppercase z-10">
-                            {project.country === 'TR' ? '🔴 Turkey' : '🌍 Global'}
-                        </div>
+                        {project.image_url ? (
+                            <img
+                                src={project.image_url}
+                                alt={project.name}
+                                className="w-full h-full object-cover"
+                            />
+                        ) : (
+                            <div className={`w-full h-full ${bgColors[index % bgColors.length]} flex items-center justify-center`}>
+                                <span className="text-4xl font-black text-foreground/20 uppercase tracking-tighter">
+                                    {project.country === 'TR' ? 'TR' : 'GL'}
+                                </span>
+                            </div>
+                        )}
                     </div>
 
                     {/* Content Section */}
                     <div className="p-4 flex-1 flex flex-col">
-                        <div className="mb-2">
-                            <h3 className="text-xl font-bold text-foreground leading-tight mb-0.5 truncate">
-                                {project.name}
-                            </h3>
-                            {project.motto && (
-                                <p className="text-[11px] font-bold text-secondary uppercase tracking-tight truncate">
-                                    {project.motto}
-                                </p>
-                            )}
+                        <div className="mb-2 flex justify-between items-start gap-2">
+                            <div className="min-w-0 flex-1">
+                                <h3 className="text-xl font-bold text-foreground leading-tight mb-0.5 truncate">
+                                    {project.name}
+                                </h3>
+                                {project.motto && (
+                                    <p className="text-[11px] font-bold text-secondary uppercase tracking-tight truncate">
+                                        {project.motto}
+                                    </p>
+                                )}
+                            </div>
+                            {/* Country Badge */}
+                            <div className="px-2 py-1 bg-background border-2 border-foreground text-[10px] font-bold uppercase shrink-0">
+                                {project.country === 'TR' ? '🔴 Turkey' : '🌍 Global'}
+                            </div>
                         </div>
 
                         {project.description && (
