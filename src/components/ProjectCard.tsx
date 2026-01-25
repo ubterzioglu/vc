@@ -1,10 +1,6 @@
 import { motion } from "framer-motion";
 import { Project } from "@/types";
-
-interface ProjectCardProps {
-    project: Project;
-    index: number;
-}
+import { ExternalLink, Linkedin } from "lucide-react";
 
 const bgColors = [
     'bg-primary',
@@ -20,17 +16,17 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-                duration: 0.4,
-                delay: index * 0.05,
+                duration: 0.5,
+                delay: index * 0.1,
                 ease: [0.25, 0.46, 0.45, 0.94],
             }}
             whileHover={{
-                scale: 1.02,
                 y: -4,
                 transition: { duration: 0.2 },
             }}
-            className="group relative bg-card border-4 border-foreground hover:shadow-brutal transition-all cursor-pointer"
+            className="group relative bg-card border-4 border-foreground hover:shadow-brutal transition-all h-full flex flex-col"
         >
+            {/* Image Section */}
             <div className="aspect-video bg-muted border-b-4 border-foreground relative overflow-hidden group">
                 {project.image_url ? (
                     <img
@@ -52,11 +48,59 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                 </div>
             </div>
 
-            <div className="p-6">
-                {/* Project Name */}
-                <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                    {project.name}
-                </h3>
+            {/* Content Section */}
+            <div className="p-6 flex-1 flex flex-col">
+                {/* Header */}
+                <div className="mb-4">
+                    <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors leading-tight mb-1">
+                        {project.name}
+                    </h3>
+                    {project.motto && (
+                        <p className="text-sm font-bold text-secondary uppercase tracking-tight">
+                            {project.motto}
+                        </p>
+                    )}
+                </div>
+
+                {/* Description */}
+                {project.description && (
+                    <p className="text-muted-foreground text-sm mb-6 line-clamp-3 leading-relaxed flex-1">
+                        {project.description}
+                    </p>
+                )}
+
+                {/* Links */}
+                <div className="flex items-center gap-3 pt-4 border-t-2 border-muted mt-auto">
+                    {project.project_url && (
+                        <a
+                            href={project.project_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1 text-sm font-bold hover:text-primary transition-colors hover:underline"
+                        >
+                            <ExternalLink className="w-4 h-4" />
+                            Visit
+                        </a>
+                    )}
+
+                    {!project.is_anonymous && project.linkedin_url && (
+                        <a
+                            href={project.linkedin_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1 text-sm font-bold hover:text-primary transition-colors hover:underline text-muted-foreground"
+                        >
+                            <Linkedin className="w-4 h-4" />
+                            Creator
+                        </a>
+                    )}
+
+                    {project.is_anonymous && (
+                        <span className="text-xs font-bold text-muted-foreground italic ml-auto">
+                            Anonymous Creator
+                        </span>
+                    )}
+                </div>
 
                 {/* Decorative corner accent */}
                 <div className="absolute top-2 right-2 w-3 h-3 bg-primary" />

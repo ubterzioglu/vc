@@ -63,7 +63,13 @@ export async function addProject(formData: ProjectFormData): Promise<Project> {
         .insert([{
             name: formData.name,
             country: formData.country,
-            image_url: imageUrl
+            image_url: imageUrl,
+            project_url: formData.project_url,
+            motto: formData.motto,
+            description: formData.description,
+            linkedin_url: formData.linkedin_url,
+            is_anonymous: formData.is_anonymous,
+            contact_email: formData.contact_email
         }])
         .select()
         .single();
@@ -102,7 +108,13 @@ export async function updateProject(
         .from('projects')
         .update({
             name: formData.name,
-            country: formData.country
+            country: formData.country,
+            project_url: formData.project_url,
+            motto: formData.motto,
+            description: formData.description,
+            linkedin_url: formData.linkedin_url,
+            is_anonymous: formData.is_anonymous,
+            contact_email: formData.contact_email
             // Note: Image update logic not implemented yet for admin edit
         })
         .eq('id', id)
