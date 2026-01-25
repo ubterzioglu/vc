@@ -116,13 +116,13 @@ const AdminDashboard = () => {
                         <div className="flex gap-2">
                             <button
                                 onClick={() => setActiveTab('projects')}
-                                className={`px-4 py-2 font-bold border-2 border-foreground transition-all flex items-center gap-2 ${activeTab === 'projects' ? 'bg-primary text-black' : 'bg-white hover:bg-muted'}`}
+                                className={`px-4 py-2 font-bold border-2 transition-all flex items-center gap-2 ${activeTab === 'projects' ? 'bg-primary text-black border-primary' : 'bg-transparent text-white border-white hover:bg-white hover:text-black'}`}
                             >
                                 <LayoutGrid className="w-4 h-4" /> Projects
                             </button>
                             <button
                                 onClick={() => setActiveTab('feedback')}
-                                className={`px-4 py-2 font-bold border-2 border-foreground transition-all flex items-center gap-2 ${activeTab === 'feedback' ? 'bg-secondary text-black' : 'bg-white hover:bg-muted'}`}
+                                className={`px-4 py-2 font-bold border-2 transition-all flex items-center gap-2 ${activeTab === 'feedback' ? 'bg-secondary text-black border-secondary' : 'bg-transparent text-white border-white hover:bg-white hover:text-black'}`}
                             >
                                 <MessageSquare className="w-4 h-4" /> Feedback
                             </button>
