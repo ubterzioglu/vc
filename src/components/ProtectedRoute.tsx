@@ -6,7 +6,7 @@ interface ProtectedRouteProps {
 }
 
 const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
-    const isAdmin = sessionStorage.getItem('adminAuth') === 'true';
+    const isAdmin = localStorage.getItem('isAdmin') === 'true';
 
     if (!isAdmin) {
         return <Navigate to="/admin/login" replace />;
