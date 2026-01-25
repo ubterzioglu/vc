@@ -17,6 +17,8 @@ const SOCIAL_LINKS = [
     { icon: Mail, href: "mailto:contact@vclove.online", color: "bg-purple-600", label: "Email" },
 ];
 
+import heroBg from "@/assets/hero-bg.jpg";
+
 const Contact = () => {
     const [message, setMessage] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -42,7 +44,7 @@ const Contact = () => {
 
     return (
         <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-black">
-            <HeroBackground type="image" imageSrc="/assets/hero-bg.jpg" overlayOpacity={0.9} />
+            <HeroBackground type="image" imageSrc={heroBg} overlayOpacity={0.9} />
 
             <div className="relative z-10 container mx-auto px-4 py-16 max-w-4xl">
                 <h1 className="text-5xl md:text-7xl font-display font-black uppercase text-primary drop-shadow-lg mb-8 text-center">
