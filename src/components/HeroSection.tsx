@@ -5,6 +5,7 @@ import HeroBackground, { type BackgroundType } from "./HeroBackground";
 import heroBg from "@/assets/hero-bg.jpg";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import FeaturedCarousel from "./FeaturedCarousel";
 
 // =====================================================
 // ARKA PLAN AYARLARI - Buradan kolayca değiştir!
@@ -196,11 +197,12 @@ const HeroSection = () => {
             </BrutalButton>
           </a>
         </motion.div>
-
-
-
-
       </motion.div>
+
+      {/* Featured Carousel - Absolute Bottom */}
+      <div className="absolute bottom-0 left-0 right-0 z-20">
+        <FeaturedCarousel />
+      </div>
     </section>
   );
 };

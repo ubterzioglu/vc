@@ -54,7 +54,7 @@ const LeaderboardItem = ({ entry, rank }: LeaderboardItemProps) => {
             <div className="flex-1 min-w-0">
                 <h3 className="font-bold text-lg truncate flex items-center gap-2">
                     {entry.name}
-                    {entry.country === 'TR' && <span className="text-sm">🇹🇷</span>}
+                    {entry.country === 'TR' && <span className="text-sm">🔴</span>}
                 </h3>
                 {entry.motto && (
                     <p className="text-sm opacity-80 truncate font-medium">{entry.motto}</p>

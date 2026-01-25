@@ -199,7 +199,7 @@ const ProjectSubmissionForm = () => {
                         <label className="flex-1 cursor-pointer">
                             <input {...register("country")} type="radio" value="TR" className="peer sr-only" />
                             <div className="p-4 border-4 border-foreground peer-checked:bg-primary peer-checked:text-primary-foreground transition-all text-center font-bold">
-                                🇹🇷 Turkey
+                                🔴 Turkey
                             </div>
                         </label>
                         <label className="flex-1 cursor-pointer">
