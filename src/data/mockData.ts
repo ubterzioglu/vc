@@ -128,3 +128,26 @@ export async function updateProject(
 
     return data;
 }
+// Vote interface
+export interface Vote {
+    project_id: string;
+    ui_score: number;
+    ux_score: number;
+    stability_score: number;
+    innovation_score: number;
+    doc_score: number;
+}
+
+/**
+ * Submit a vote for a project
+ */
+export async function submitVote(vote: Vote): Promise<void> {
+    const { error } = await supabase
+        .from('votes')
+        .insert([vote]);
+
+    if (error) {
+        console.error('Error submitting vote:', error);
+        throw error;
+    }
+}
