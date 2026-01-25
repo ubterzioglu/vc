@@ -137,14 +137,16 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.div variants={buttonVariants}>
-            <BrutalButton
-              variant="accent"
-              size="lg"
-              className="w-full flex-col h-auto py-4 gap-1"
-            >
-              <Trophy className="w-6 h-6" />
-              <span className="text-xs md:text-sm">Rankings</span>
-            </BrutalButton>
+            <Link to="/leaderboard">
+              <BrutalButton
+                variant="accent"
+                size="lg"
+                className="w-full flex-col h-auto py-4 gap-1"
+              >
+                <Trophy className="w-6 h-6" />
+                <span className="text-xs md:text-sm">Leaderboard</span>
+              </BrutalButton>
+            </Link>
           </motion.div>
 
           <motion.div variants={buttonVariants} className="col-span-2 md:col-span-1">
@@ -159,20 +161,7 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.div variants={buttonVariants} className="col-span-2 md:col-span-1">
-            <Link to="/leaderboard">
-              <BrutalButton
-                variant="accent"
-                size="lg"
-                className="w-full flex-col h-auto py-4 gap-1"
-              >
-                <Trophy className="w-6 h-6" />
-                <span className="text-xs md:text-sm">Leaderboard</span>
-              </BrutalButton>
-            </Link>
-          </motion.div>
-
-          <motion.div variants={buttonVariants} className="col-span-2 md:col-span-1">
-            <a href="mailto:ubterzioglu@gmail.com">
+            <Link to="/contact">
               <BrutalButton
                 variant="secondary"
                 size="lg"
@@ -181,7 +170,7 @@ const HeroSection = () => {
                 <Mail className="w-6 h-6" />
                 <span className="text-xs md:text-sm">Contact</span>
               </BrutalButton>
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
 

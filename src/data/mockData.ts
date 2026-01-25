@@ -184,3 +184,17 @@ export async function getLeaderboard(): Promise<LeaderboardEntry[]> {
 
     return data || [];
 }
+
+/**
+ * Submit feedback
+ */
+export async function submitFeedback(message: string): Promise<void> {
+    const { error } = await supabase
+        .from('feedback')
+        .insert([{ message }]);
+
+    if (error) {
+        console.error('Error submitting feedback:', error);
+        throw error;
+    }
+}
