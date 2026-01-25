@@ -151,14 +151,16 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.div variants={buttonVariants} className="col-span-2 md:col-span-1">
-            <BrutalButton
-              variant="highlight"
-              size="lg"
-              className="w-full flex-col h-auto py-4 gap-1"
-            >
-              <HelpCircle className="w-6 h-6" />
-              <span className="text-xs md:text-sm">How It Works?</span>
-            </BrutalButton>
+            <Link to="/how-it-works">
+              <BrutalButton
+                variant="highlight"
+                size="lg"
+                className="w-full flex-col h-auto py-4 gap-1"
+              >
+                <HelpCircle className="w-6 h-6" />
+                <span className="text-xs md:text-sm">How It Works?</span>
+              </BrutalButton>
+            </Link>
           </motion.div>
 
           <motion.div variants={buttonVariants} className="col-span-2 md:col-span-1">

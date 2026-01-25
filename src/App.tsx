@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
+import HowItWorks from "./pages/HowItWorks";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,8 @@ const App = () => (
           <Route path="/showroom" element={<Showroom />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/add-project" element={<AddProject />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={
