@@ -1,14 +1,1 @@
-{
-  "github.copilot.chat.mcp.servers": {
-    "shell": {
-      "command": "npx",
-      "args": ["-y", "@anthropic/mcp-shell"]
-    }
-  },
-  "css.lint.vendorPrefix": "warning",
-  "css.lint.universalSelector": "warning",
-  "css.lint.zeroUnits": "warning",
-  "[css]": {
-    "editor.formatOnSave": true
-  }
-}
+{}
