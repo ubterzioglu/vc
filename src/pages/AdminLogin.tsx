@@ -3,23 +3,23 @@ import { useNavigate } from "react-router-dom";
 import { BrutalButton } from "@/components/ui/brutal-button";
 import { motion } from "framer-motion";
 import { Lock } from "lucide-react";
+import { toast } from "sonner"; // Assuming sonner for toast notifications
 
 const AdminLogin = () => {
     const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
     const navigate = useNavigate();
 
-    const handleSubmit = (e: FormEvent) => {
+    const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
-
-        const correctPassword = import.meta.env.VITE_ADMIN_PASSWORD;
-
-        if (password === correctPassword) {
-            sessionStorage.setItem('adminAuth', 'true');
-            navigate('/admin');
+        // Simple hardcoded auth for demo/MVP
+        // In production, use Supabase Auth or proper backend verification
+        if (password === "PPPlll!11321132") {
+            localStorage.setItem("isAdmin", "true");
+            navigate("/admin");
+            toast.success("Welcome back, Admin!");
         } else {
-            setError("Invalid password");
-            setPassword("");
+            toast.error("Invalid password");
+            setPassword(""); // Keep this to clear the password field on error
         }
     };
 
@@ -40,7 +40,7 @@ const AdminLogin = () => {
                         Enter admin password to continue
                     </p>
 
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    <form onSubmit={handleLogin} className="space-y-6">
                         <div>
                             <label htmlFor="password" className="block text-sm font-bold mb-2 uppercase tracking-wide">
                                 Password
@@ -54,11 +54,7 @@ const AdminLogin = () => {
                                 placeholder="Enter password"
                                 autoFocus
                             />
-                            {error && (
-                                <p className="mt-2 text-sm text-destructive font-semibold">
-                                    {error}
-                                </p>
-                            )}
+
                         </div>
 
                         <BrutalButton
