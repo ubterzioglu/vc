@@ -162,15 +162,16 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.div variants={buttonVariants} className="col-span-2 md:col-span-1">
-            <BrutalButton
-              variant="secondary"
-              size="lg"
-              className="w-full flex-col h-auto py-4 gap-1"
-              onClick={() => toast.info("Coming soon!")}
-            >
-              <Mail className="w-6 h-6" />
-              <span className="text-xs md:text-sm">Contact</span>
-            </BrutalButton>
+            <Link to="/contact">
+              <BrutalButton
+                variant="secondary"
+                size="lg"
+                className="w-full flex-col h-auto py-4 gap-1"
+              >
+                <Mail className="w-6 h-6" />
+                <span className="text-xs md:text-sm">Contact</span>
+              </BrutalButton>
+            </Link>
           </motion.div>
         </motion.div>
 

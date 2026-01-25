@@ -52,11 +52,9 @@ const Contact = () => {
                 {/* Social Grid - Resized */}
                 <div className="grid grid-cols-3 md:grid-cols-9 gap-2 md:gap-4 mb-8 justify-center max-w-4xl mx-auto">
                     {SOCIAL_LINKS.map((link, i) => (
-                        <a
+                        <button
                             key={i}
-                            href={link.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            onClick={() => toast.info("Coming soon!")}
                             className={`
                                 aspect-square w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full border-2 border-foreground 
                                 hover:scale-105 transition-transform shadow-brutal hover:shadow-brutal-sm mx-auto
@@ -65,7 +63,7 @@ const Contact = () => {
                             title={link.label}
                         >
                             <link.icon className="w-5 h-5 md:w-6 md:h-6" />
-                        </a>
+                        </button>
                     ))}
                 </div>
 
