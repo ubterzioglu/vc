@@ -162,7 +162,7 @@
 
   /* Custom scrollbar for description */
   .custom-scrollbar::-webkit-scrollbar {
-    width: 4px;
+    width: 12px;
   }
 
   .custom-scrollbar::-webkit-scrollbar-track {
@@ -196,7 +196,7 @@
     transition: opacity 0.3s ease;
   }
 
-  .description-scroll:hover + .description-fade {
+  .description-scroll:hover+.description-fade {
     opacity: 0.4;
   }
 }
