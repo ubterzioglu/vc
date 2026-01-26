@@ -137,7 +137,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                                     {project.name}
                                 </h3>
                                 {project.motto && (
-                                    <p className="text-[11px] font-bold text-secondary uppercase tracking-tight truncate">
+                                    <p className="text-[11px] font-bold text-secondary uppercase tracking-tight line-clamp-2 leading-tight">
                                         {project.motto}
                                     </p>
                                 )}
@@ -150,9 +150,10 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 
                         {project.description && (
                             <div className="relative flex-1 min-h-0 mb-3 group/desc">
-                                <div 
+                                <div
                                     ref={descriptionRef}
-                                    className="description-scroll h-full max-h-[72px] overflow-y-auto pr-6"
+                                    className="description-scroll h-full max-h-[72px] overflow-y-auto custom-scrollbar pr-1"
+                                    onClick={(e) => e.stopPropagation()}
                                 >
                                     <p className="text-muted-foreground text-xs leading-relaxed">
                                         {project.description}

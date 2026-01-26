@@ -160,14 +160,22 @@
     transform: rotateY(180deg);
   }
 
-  /* Hide scrollbar for cleaner card UI */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
+  /* Custom scrollbar for description */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 24px;
   }
 
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--muted-foreground) / 0.5);
   }
 
   /* Soft aesthetic scrollbar for description area */
@@ -206,7 +214,7 @@
     transition: opacity 0.3s ease;
   }
 
-  .description-scroll:hover + .description-fade {
+  .description-scroll:hover+.description-fade {
     opacity: 0.4;
   }
 }
