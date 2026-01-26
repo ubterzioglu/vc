@@ -137,9 +137,14 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                         </div>
 
                         {project.description && (
-                            <p className="text-muted-foreground text-xs mb-3 line-clamp-3 leading-relaxed flex-1">
-                                {project.description}
-                            </p>
+                            <div className="relative flex-1 min-h-0 mb-3">
+                                <div className="description-scroll h-full max-h-[72px] overflow-y-auto no-scrollbar pr-1">
+                                    <p className="text-muted-foreground text-xs leading-relaxed">
+                                        {project.description}
+                                    </p>
+                                </div>
+                                <div className="description-fade absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-t from-card to-transparent pointer-events-none" />
+                            </div>
                         )}
 
                         <div className="flex items-center gap-3 pt-4 border-t-2 border-muted mt-auto" onClick={e => e.stopPropagation()}>

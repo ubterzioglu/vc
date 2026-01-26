@@ -169,4 +169,26 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  /* Smooth scroll for description area */
+  .description-scroll {
+    scroll-behavior: smooth;
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+
+  .description-scroll:hover {
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  }
+
+  /* Hide fade when content is short */
+  .description-fade {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+
+  .description-scroll:hover + .description-fade {
+    opacity: 0.4;
+  }
 }
