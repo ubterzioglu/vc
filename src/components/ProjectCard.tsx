@@ -230,20 +230,8 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                         <RotateCw className="w-4 h-4 text-primary-foreground opacity-50" />
                     </div>
 
-                    <div className="p-4 flex-1 overflow-y-auto no-scrollbar space-y-4">
-                        {/* Presets */}
-                        <div className="flex gap-2 justify-center pb-2 border-b-2 border-muted">
-                            {[1, 4, 7].map(val => (
-                                <button
-                                    key={val}
-                                    onClick={(e) => handlePreset(val, e)}
-                                    className="px-2 py-1 text-xs font-bold bg-muted border-2 border-foreground hover:bg-accent transition-colors"
-                                >
-                                    All {val}
-                                </button>
-                            ))}
-                        </div>
 
+                    <div className="p-4 flex-1 overflow-y-auto no-scrollbar space-y-4">
                         {/* Categories */}
                         <div className="space-y-3">
                             {CATEGORIES.map(cat => (
